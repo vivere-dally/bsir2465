@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="1447.0">tasks.utils.TasksOperations</node>
+    <node x="244.0" y="630.0">tasks.repository.LinkedTaskList.Node</node>
+    <node x="873.0" y="907.0">tasks.services.Notificator</node>
+    <node x="542.0" y="907.0">tasks.services.DateService</node>
+    <node x="0.0" y="674.5">tasks.repository.LinkedTaskList.LinkedTaskListIterator</node>
+    <node x="436.5" y="215.0">tasks.repository.ArrayTaskList</node>
+    <node x="0.0" y="907.0">tasks.utils.TaskIO</node>
+    <node x="363.0" y="1447.0">tasks.model.TaskTest</node>
+    <node x="1005.0" y="0.0">tasks.controller.Controller</node>
+    <node x="1347.0" y="0.0">tasks.model.Task</node>
+    <node x="1151.0" y="907.0">tasks.controller.TaskInfoController</node>
+    <node x="300.0" y="907.0">tasks.Main</node>
+    <node x="416.0" y="674.5">tasks.repository.ArrayTaskList.ArrayTaskListIterator</node>
+    <node x="128.5" y="237.5">tasks.repository.LinkedTaskList</node>
+    <node x="677.0" y="0.0">tasks.controller.NewEditController</node>
+    <node x="236.875" y="0.0">tasks.repository.TaskList</node>
+    <node x="1388.0" y="907.0">tasks.services.TasksService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tasks.repository.LinkedTaskList.LinkedTaskListIterator" target="tasks.repository.LinkedTaskList">
+      <point x="0.0" y="-71.5" />
+      <point x="112.0" y="605.0" />
+      <point x="172.25" y="605.0" />
+      <point x="-43.75" y="160.0" />
+    </edge>
+    <edge source="tasks.repository.LinkedTaskList" target="tasks.repository.TaskList">
+      <point x="0.0" y="-160.0" />
+      <point x="216.0" y="190.0" />
+      <point x="288.375" y="190.0" />
+      <point x="-51.5" y="82.5" />
+    </edge>
+    <edge source="tasks.repository.ArrayTaskList" target="tasks.repository.TaskList">
+      <point x="0.0" y="-182.5" />
+      <point x="524.0" y="190.0" />
+      <point x="391.375" y="190.0" />
+      <point x="51.5" y="82.5" />
+    </edge>
+    <edge source="tasks.repository.ArrayTaskList.ArrayTaskListIterator" target="tasks.repository.ArrayTaskList">
+      <point x="0.0" y="-71.5" />
+      <point x="0.0" y="182.5" />
+    </edge>
+    <edge source="tasks.repository.LinkedTaskList.Node" target="tasks.repository.LinkedTaskList">
+      <point x="0.0" y="-116.0" />
+      <point x="320.0" y="605.0" />
+      <point x="259.75" y="605.0" />
+      <point x="43.75" y="160.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="1062.0" y="628.7499999999998" />
+  <SelectedNodes>
+    <node>tasks.utils.TasksOperations</node>
+    <node>tasks.repository.LinkedTaskList.Node</node>
+    <node>tasks.services.Notificator</node>
+    <node>tasks.services.DateService</node>
+    <node>tasks.repository.LinkedTaskList.LinkedTaskListIterator</node>
+    <node>tasks.repository.ArrayTaskList</node>
+    <node>tasks.utils.TaskIO</node>
+    <node>tasks.model.TaskTest</node>
+    <node>tasks.controller.Controller</node>
+    <node>tasks.model.Task</node>
+    <node>tasks.controller.TaskInfoController</node>
+    <node>tasks.Main</node>
+    <node>tasks.repository.ArrayTaskList.ArrayTaskListIterator</node>
+    <node>tasks.repository.LinkedTaskList</node>
+    <node>tasks.controller.NewEditController</node>
+    <node>tasks.repository.TaskList</node>
+    <node>tasks.services.TasksService</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,12 +1,12 @@
-package tasks.services;
+package tasks.utils;
 
 
 import javafx.collections.ObservableList;
 import org.apache.log4j.Logger;
-import tasks.model.LinkedTaskList;
+import tasks.Main;
+import tasks.repository.LinkedTaskList;
 import tasks.model.Task;
-import tasks.model.TaskList;
-import tasks.view.*;
+import tasks.repository.TaskList;
 
 import java.io.*;
 import java.text.ParseException;

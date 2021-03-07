@@ -1,7 +1,7 @@
 package tasks.model;
 
 import org.apache.log4j.Logger;
-import tasks.services.TaskIO;
+import tasks.utils.TaskIO;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -17,9 +17,9 @@ public class Task implements Serializable, Cloneable {
     private boolean active;
 
     private static final Logger log = Logger.getLogger(Task.class.getName());
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-    public static SimpleDateFormat getDateFormat(){
+    public SimpleDateFormat getDateFormat(){
         return sdf;
     }
     public Task(String title, Date time){
@@ -93,7 +93,7 @@ public class Task implements Serializable, Cloneable {
 
     }
     public boolean isRepeated(){
-        return !(this.interval == 0);
+        return this.interval != 0;
 
     }
     public Date nextTimeAfter(Date current){
@@ -104,7 +104,7 @@ public class Task implements Serializable, Cloneable {
             if (current.before(start)){
                 return start;
             }
-            if ((current.after(start) || current.equals(start)) && (current.before(end) || current.equals(end))){
+            if (current.before(end) || current.equals(end)){
                 for (long i = start.getTime(); i <= end.getTime(); i += interval*1000){
                     if (current.equals(timeAfter)) return new Date(timeAfter.getTime()+interval*1000);
                     if (current.after(timeBefore) && current.before(timeAfter)) return timeBefore;//return timeAfter
