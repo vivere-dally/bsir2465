@@ -134,7 +134,7 @@ class TasksServiceTest {
     @ValueSource(ints = {0, 1})
     void addTask_valid_ECP_DatePrecedence(int daysToAdd) {
         // arrange
-        String description = "aaaa";
+        String description = "aaaaa";
         Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(daysToAdd));
 
         // act & assert
@@ -146,7 +146,7 @@ class TasksServiceTest {
     @Test
     void addTask_nonvalid_ECP_DatePrecedence() {
         // arrange
-        String description = "aaaa";
+        String description = "aaaaa";
         Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().minusDays(1));
 
         // act
