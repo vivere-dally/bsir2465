@@ -52,11 +52,11 @@ public class TasksService {
 
     public void addTask(String description, Date startDate, Date endDate, int interval, boolean active) {
         if (description.length() < 3 || description.length() > 255) {
-            throw new IllegalArgumentException("Description must have a length from 3 to 255");
+            throw new IllegalArgumentException("Description must have a length between 3 and 255");
         }
 
         if (startDate.after(endDate)) {
-            throw new IllegalArgumentException("Start Date must before End Date");
+            throw new IllegalArgumentException("Start Date must be before End Date");
         }
 
         Task task = new Task(description, startDate, endDate, interval);

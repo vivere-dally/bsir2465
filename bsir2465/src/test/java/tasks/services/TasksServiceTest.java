@@ -18,8 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Laborator 2")
 class TasksServiceTest {
-    private static final String descriptionErrorMessage = "Description must have a length from 3 to 255";
-    private static final String dateErrorMessage = "Start Date must before End Date";
+    private static final String descriptionErrorMessage = "Description must have a length between 3 and 255";
+    private static final String dateErrorMessage = "Start Date must be before End Date";
 
     @Mock
     private ArrayTaskList arrayTaskList;
@@ -133,8 +133,8 @@ class TasksServiceTest {
     @ParameterizedTest
     @ValueSource(ints = {0, 1})
     void addTask_valid_ECP_DatePrecedence(int daysToAdd) {
-        //arrange
-        String description = "aaa";
+        // arrange
+        String description = "aaaa";
         Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(daysToAdd));
 
         // act & assert
@@ -145,8 +145,8 @@ class TasksServiceTest {
 
     @Test
     void addTask_nonvalid_ECP_DatePrecedence() {
-        //arrange
-        String description = "aaa";
+        // arrange
+        String description = "aaaa";
         Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().minusDays(1));
 
         // act
