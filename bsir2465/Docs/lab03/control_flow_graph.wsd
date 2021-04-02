@@ -1,0 +1,26 @@
+@startuml ControlFlowGraph
+
+title Control Flow Graph
+
+skinparam ConditionEndStyle hline
+!pragma useVerticalIf on
+
+:1;
+while (2) is (true)
+  if (3) then (true)
+    if (4) then (true)
+      :5;
+    else (false)
+    endif
+  else (false)
+  endif
+  :6;
+endwhile (false)
+if (7) then (true)
+  :8;
+else (false)
+  :9;
+endif
+:10;
+
+@enduml

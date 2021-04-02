@@ -16,7 +16,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("Laborator 2")
+@DisplayName("Lab 2")
 class TasksServiceTest {
     private static final String descriptionErrorMessage = "Description must have a length between 3 and 255";
     private static final String dateErrorMessage = "Start Date must be before End Date";

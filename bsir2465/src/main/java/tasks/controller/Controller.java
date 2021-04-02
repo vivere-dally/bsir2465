@@ -58,7 +58,7 @@ public class Controller {
     public void setService(TasksService service){
         this.service=service;
         this.dateService=new DateService(service);
-        this.tasksList=service.getObservableList();
+        this.tasksList= service.getObservableList();
         updateCountLabel(tasksList);
         tasks.setItems(tasksList);
         mainTable = tasks;

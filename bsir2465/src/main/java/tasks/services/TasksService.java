@@ -17,9 +17,10 @@ public class TasksService {
     }
 
 
-    public ObservableList<Task> getObservableList(){
+    public ObservableList<Task> getObservableList() {
         return FXCollections.observableArrayList(tasks.getAll());
     }
+
     public String getIntervalInHours(Task task){
         int seconds = task.getRepeatInterval();
         int minutes = seconds / DateService.SECONDS_IN_MINUTE;
@@ -46,7 +47,7 @@ public class TasksService {
     }
 
     public Iterable<Task> filterTasks(Date start, Date end){
-        TasksOperations tasksOps = new TasksOperations(getObservableList());
+        TasksOperations tasksOps = new TasksOperations(tasks.getAll());
         return tasksOps.incoming(start,end);
     }
 
