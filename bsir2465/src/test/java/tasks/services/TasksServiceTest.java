@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static tasks.Utils.d;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Lab 2")
@@ -26,10 +27,6 @@ class TasksServiceTest {
 
     private TasksService tasksService;
 
-    private Date getDate(LocalDate localDate) {
-        return java.sql.Date.valueOf(localDate);
-    }
-
     @BeforeEach
     void setUp() {
         tasksService = new TasksService(arrayTaskList);
@@ -39,7 +36,7 @@ class TasksServiceTest {
     @ValueSource(strings = {"aaa", "aaaa"})
     void addTask_valid_BVA_DescriptionLength_lowerValidLimit(String description) {
         // arrange
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act & assert
         assertDoesNotThrow(() -> {
@@ -56,7 +53,7 @@ class TasksServiceTest {
             stringBuilder.append('a');
         }
         String description = stringBuilder.toString();
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act & assert
         assertDoesNotThrow(() -> {
@@ -72,7 +69,7 @@ class TasksServiceTest {
             stringBuilder.append('a');
         }
         String description = stringBuilder.toString();
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -87,7 +84,7 @@ class TasksServiceTest {
     void addTask_nonvalid_BVA_DescriptionLength_lowerBound() {
         // arrange
         String description = "aa";
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -102,7 +99,7 @@ class TasksServiceTest {
     void addTask_valid_ECP_DescriptionLength() {
         // arrange
         String description = "hello world";
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act & assert
         assertDoesNotThrow(() -> {
@@ -119,7 +116,7 @@ class TasksServiceTest {
             stringBuilder.append('a');
         }
         String description = stringBuilder.toString();
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(1));
 
         // act
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -135,7 +132,7 @@ class TasksServiceTest {
     void addTask_valid_ECP_DatePrecedence(int daysToAdd) {
         // arrange
         String description = "aaaaa";
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().plusDays(daysToAdd));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().plusDays(daysToAdd));
 
         // act & assert
         assertDoesNotThrow(() -> {
@@ -147,7 +144,7 @@ class TasksServiceTest {
     void addTask_nonvalid_ECP_DatePrecedence() {
         // arrange
         String description = "aaaaa";
-        Date startDate = getDate(LocalDate.now()), endDate = getDate(LocalDate.now().minusDays(1));
+        Date startDate = d(LocalDate.now()), endDate = d(LocalDate.now().minusDays(1));
 
         // act
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {

@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tasks.model.Task;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +18,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
+import static tasks.Utils.d;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Lab 3")
@@ -32,10 +32,6 @@ class TasksOperationsTest {
     @BeforeEach
     void setUp() {
         tasksOperations = new TasksOperations(tasksList);
-    }
-
-    private Date d(LocalDate localDate) {
-        return Date.valueOf(localDate);
     }
 
     @Test
