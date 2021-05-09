@@ -14,7 +14,7 @@ pipeline{
 
     post{
         success {
-            archiveArtifacts artifacts: "lab5/target/site", fingerprint: true
+            archiveArtifacts artifacts: "lab5/target/site/serenity/**", fingerprint: true
         }
 
         cleanup {
