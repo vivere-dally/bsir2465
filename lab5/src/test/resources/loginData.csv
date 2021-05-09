@@ -1,0 +1,3 @@
+username,password,valid
+admin,admin,true
+no_admin,no_admin,false
