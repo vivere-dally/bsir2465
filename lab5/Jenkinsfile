@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+
+    stages {
+        stage("Verify") {
+            steps {
+                sh '''
+                    cd lab5
+                    mvn verify
+                '''
+            }
+        }
+    }
+
+    post{
+        success {
+            archiveArtifacts artifacts: "lab5/target/site", fingerprint: true
+        }
+
+        cleanup {
+            deleteDir()
+        }
+    }
+}
