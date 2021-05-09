@@ -8,11 +8,6 @@ public class NewAccountSteps {
     private NewAccountPage newAccountPage;
 
     @Step
-    public void inputCurrency(String currency) {
-        this.newAccountPage.inputCurrency(currency);
-    }
-
-    @Step
     public void inputMoney(String money) {
         this.newAccountPage.inputMoney(money);
     }
@@ -28,8 +23,7 @@ public class NewAccountSteps {
     }
 
     @Step
-    public void newAccount(String currency, String money, String monthlyIncome) {
-        this.inputCurrency(currency);
+    public void newAccount(String money, String monthlyIncome) {
         this.inputMoney(money);
         this.inputMonthlyIncomeInput(monthlyIncome);
         this.clickCreate();

@@ -6,9 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class NewAccountPage extends PageObject {
 
-    @FindBy(xpath = "//ion-select[@id='currency-select']/input")
-    private WebElement currencySelectInput;
-
     @FindBy(xpath = "//ion-input[@id='money-input']/input")
     private WebElement moneyInput;
 
@@ -17,10 +14,6 @@ public class NewAccountPage extends PageObject {
 
     @FindBy(id = "create-submit")
     private WebElement createButton;
-
-    public void inputCurrency(String currency) {
-        this.currencySelectInput.sendKeys(currency);
-    }
 
     public void inputMoney(String money) {
         this.moneyInput.sendKeys(money);
