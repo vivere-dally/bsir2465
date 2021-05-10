@@ -28,8 +28,12 @@ public class LoginSteps {
     }
 
     @Step
+    public void clickSignup() {
+        this.loginPage.clickSignup();
+    }
+
+    @Step
     public void login(String username, String password) {
-        this.openPage();
         this.inputUsername(username);
         this.inputPassword(password);
         this.clickLogin();

@@ -17,4 +17,9 @@ public class AccountSteps {
     public void isAccountCreated(String money, boolean expected) {
         Assert.assertEquals(expected, this.accountPage.isAccountCreated(money));
     }
+
+    @Step
+    public void clickCreatedAccount(String money) {
+        this.accountPage.clickCreatedAccount(money);
+    }
 }

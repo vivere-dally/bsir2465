@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
@@ -27,5 +26,11 @@ public class AccountPage extends PageObject {
         } catch (NoSuchElementException ignored) {
             return false;
         }
+    }
+
+    public void clickCreatedAccount(String money) {
+        String xpath = String.format("//ion-label[text()[contains(.,'RON')] and text()[contains(.,'%s')]]/..", money);
+        WebElement account = getDriver().findElement(By.xpath(xpath));
+        account.click();
     }
 }
