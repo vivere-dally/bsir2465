@@ -28,6 +28,7 @@ public class LoginTest {
 
     @Test
     public void loginTest() {
+        this.loginSteps.openPage();
         this.loginSteps.login(this.username, this.password);
         this.headerSteps.isLoggedIn(this.valid);
     }
